@@ -1,0 +1,113 @@
+{#
+  This is an example home page template. It inherits and extends a layout template
+  that lives in the top-level views/ folder for convenience
+#}
+
+{% extends "layout.html" %}
+
+{% block main %}
+<div class="main-content">
+  <div class="page-header">
+    <div class="hero-banner not-home">
+    {{ apos.area(data.page, 'body', {
+      widgets: {
+        'apostrophe-images': {
+          size: 'full'
+        }
+      }
+    }) }}
+    <div class="page-header-ribbon"></div>
+    <div class="page-wrapper">
+      <div class="header-content-box">
+        <h1>{{ apos.singleton(data.page, 'heroHeading', 'apostrophe-rich-text', {
+          toolbar: [ 'Styles', 'Bold', 'Italic' ],
+          styles: [
+            { name: 'Hero Title', element: 'h1' }
+          ]
+          }) }}
+        </h1>
+  
+        <div class="content-box-para">{{ apos.singleton(data.page, 'heroParagraph', 'apostrophe-rich-text', {
+              toolbar: [ 'Bold', 'Italic' ]
+            }) }}
+        </div>
+  
+        <a href="#ourServices" class="cta-btn">
+          More Info
+        </a>
+      </div>
+      
+    </div>
+
+    <div class="page-section page-wrapper extra-top-page-margin">
+      <h2>{{ apos.singleton(data.page, 'newHEadingSection2', 'apostrophe-rich-text', {
+        toolbar: [ 'Styles', 'Bold', 'Italic' ],
+        styles: [
+          { name: 'Subheading', element: 'h2' }
+        ]
+        }) }}
+      </h2>
+
+      <div class="page-section" id="meet-the-team">
+        <div class="page-wrapper page-split-half mt-0">
+          <div class="split-left-side">
+            {{ apos.area(data.page, 'section2Image', {
+              widgets: {
+                'apostrophe-images': {
+                  size: 'full'
+                }
+              }
+            }) }}
+          </div>
+          <div class="split-right-side">
+            <h2>{{ apos.singleton(data.page, 'meetTeamMemberName1', 'apostrophe-rich-text', {
+              toolbar: [ 'Styles', 'Bold', 'Italic' ],
+              styles: [
+                { name: 'Subheading', element: 'h2' }
+              ]
+              }) }}
+            </h2>
+            <p>{{ apos.singleton(data.page, 'meetTeamMemberInfo1', 'apostrophe-rich-text', {
+              toolbar: [ 'Bold', 'Italic' ]
+            }) }}
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div class="page-section" id="meet-the-team">
+        <div class="page-wrapper page-split-half reverse mt-0">
+          
+          <div class="split-right-side">
+            <h2>{{ apos.singleton(data.page, 'meetTeamMemberName2', 'apostrophe-rich-text', {
+              toolbar: [ 'Styles', 'Bold', 'Italic' ],
+              styles: [
+                { name: 'Subheading', element: 'h2' }
+              ]
+              }) }}
+            </h2>
+            <p>{{ apos.singleton(data.page, 'meetTeamMemberInfo2', 'apostrophe-rich-text', {
+              toolbar: [ 'Bold', 'Italic' ]
+            }) }}
+            </p>
+          </div>
+          <div class="split-left-side">
+            {{ apos.area(data.page, 'section2Image', {
+              widgets: {
+                'apostrophe-images': {
+                  size: 'full'
+                }
+              }
+            }) }}
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  </div>
+
+  
+
+
+</div>
+{% endblock %}

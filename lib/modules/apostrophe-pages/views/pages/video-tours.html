@@ -1,0 +1,212 @@
+{#
+  This is an example home page template. It inherits and extends a layout template
+  that lives in the top-level views/ folder for convenience
+#}
+
+{% extends "layout.html" %}
+
+{% block main %}
+<div class="main-content">
+  <div class="page-header">
+    <div class="hero-banner not-home">
+    {{ apos.area(data.page, 'body', {
+      widgets: {
+        'apostrophe-images': {
+          size: 'full'
+        }
+      }
+    }) }}
+    <div class="page-header-ribbon"></div>
+    <div class="page-wrapper">
+      <div class="header-content-box">
+        <h1>{{ apos.singleton(data.page, 'heroHeading', 'apostrophe-rich-text', {
+          toolbar: [ 'Styles', 'Bold', 'Italic' ],
+          styles: [
+            { name: 'Hero Title', element: 'h1' }
+          ]
+          }) }}
+        </h1>
+  
+        <div class="content-box-para">{{ apos.singleton(data.page, 'heroParagraph', 'apostrophe-rich-text', {
+              toolbar: [ 'Bold', 'Italic' ]
+            }) }}
+        </div>
+  
+        <a href="#ourServices" class="cta-btn">
+          More Info
+        </a>
+      </div>
+      
+    </div>
+  </div>
+
+    <div class="page-section page-wrapper extra-top-page-margin">
+      <h2>{{ apos.singleton(data.page, 'newHEadingSection2', 'apostrophe-rich-text', {
+        toolbar: [ 'Styles', 'Bold', 'Italic' ],
+        styles: [
+          { name: 'Subheading', element: 'h2' }
+        ]
+        }) }}
+      </h2>
+      <div class="vt-slideshow">
+        
+
+
+
+
+
+        <div class="carousel">
+          <div class="carousel-inner">
+              <input class="carousel-open" type="radio" id="carousel-1" name="carousel" aria-hidden="true" hidden="" checked="checked">
+              <div class="carousel-item">
+                {{ apos.area(data.page, 'bodyVid', {
+                  widgets: {
+                    'apostrophe-video': {
+                      size: 'full'
+                    }
+                  }
+                }) }}
+              </div>
+              <input class="carousel-open" type="radio" id="carousel-2" name="carousel" aria-hidden="true" hidden="">
+              <div class="carousel-item">
+                {{ apos.area(data.page, 'bodyVid2', {
+                  widgets: {
+                    'apostrophe-video': {
+                      size: 'full'
+                    }
+                  }
+                }) }}
+              </div>
+              <input class="carousel-open" type="radio" id="carousel-3" name="carousel" aria-hidden="true" hidden="">
+              <div class="carousel-item">
+                {{ apos.area(data.page, 'bodyVid3', {
+                  widgets: {
+                    'apostrophe-video': {
+                      size: 'full'
+                    }
+                  }
+                }) }}
+              </div>
+              
+                  <label for="carousel-3" class="carousel-control prev control-1">‹</label>
+                  <label for="carousel-2" class="carousel-control next control-1">›</label>
+                  <label for="carousel-1" class="carousel-control prev control-2">‹</label>
+                  <label for="carousel-3" class="carousel-control next control-2">›</label>
+                  <label for="carousel-2" class="carousel-control prev control-3">‹</label>
+                  <label for="carousel-1" class="carousel-control next control-3">›</label>
+              
+                <ol class="carousel-indicators">
+                    <li>
+                        <label for="carousel-1" class="carousel-bullet"><span></span></label>
+                    </li>
+                    <li>
+                        <label for="carousel-2" class="carousel-bullet"><span></span></label>
+                    </li>
+                    <li>
+                        <label for="carousel-3" class="carousel-bullet"><span></span></label>
+                    </li>
+                </ol>
+          </div>
+      </div>
+    </div>
+  </div>
+
+      <div class="page-section page-grey-section vt-features" id="ourTeam">
+        <div class="page-wrapper video-tour-features">
+            <div>
+              <span class="video-icon"></span>
+              <h4>
+                {{ apos.singleton(data.page, 'videoFeatureH1', 'apostrophe-rich-text', {
+                toolbar: [ 'Styles', 'Bold', 'Italic' ],
+                styles: [
+                  { name: 'Subheading', element: 'h4' }
+                ]
+                }) }}
+              </h4>
+              <div class="hello">
+                {{ apos.singleton(data.page, 'videoFeatureP1', 'apostrophe-rich-text', {
+                  toolbar: [ 'Styles', 'Bold', 'Italic' ],
+                  styles: [
+                    { name: 'paragraph', element: 'p' }
+                  ]
+                  }) }}
+                </div>
+            </div>
+            <div>
+              <span class="video-icon"></span>
+              <h4>
+                {{ apos.singleton(data.page, 'videoFeatureH2', 'apostrophe-rich-text', {
+                toolbar: [ 'Styles', 'Bold', 'Italic' ],
+                styles: [
+                  { name: 'Subheading', element: 'h4' }
+                ]
+                }) }}
+              </h4>
+              <div class="hello">
+                {{ apos.singleton(data.page, 'videoFeatureP2', 'apostrophe-rich-text', {
+                  toolbar: [ 'Styles', 'Bold', 'Italic' ],
+                  styles: [
+                    { name: 'paragraph', element: 'p' }
+                  ]
+                  }) }}
+                </div>
+            </div>
+            <div>
+              <span class="video-icon"></span>
+              <h4>
+                {{ apos.singleton(data.page, 'videoFeatureH3', 'apostrophe-rich-text', {
+                toolbar: [ 'Styles', 'Bold', 'Italic' ],
+                styles: [
+                  { name: 'Subheading', element: 'h4' }
+                ]
+                }) }}
+              </h4>
+              <div class="hello">
+                {{ apos.singleton(data.page, 'videoFeatureP3', 'apostrophe-rich-text', {
+                  toolbar: [ 'Styles', 'Bold', 'Italic' ],
+                  styles: [
+                    { name: 'paragraph', element: 'p' }
+                  ]
+                  }) }}
+                </div>
+            </div>
+            <div>
+              <span class="video-icon"></span>
+              <h4>
+                {{ apos.singleton(data.page, 'videoFeatureH4', 'apostrophe-rich-text', {
+                toolbar: [ 'Styles', 'Bold', 'Italic' ],
+                styles: [
+                  { name: 'Subheading', element: 'h4' }
+                ]
+                }) }}
+              </h4>
+              <div>
+              <div class="hello">
+                {{ apos.singleton(data.page, 'videoFeatureP4', 'apostrophe-rich-text', {
+                  toolbar: [ 'Styles', 'Bold', 'Italic' ],
+                  styles: [
+                    { name: 'paragraph', element: 'p' }
+                  ]
+                  }) }}
+                </div>
+            </div>
+            
+  
+            
+          </div>
+        </div>
+      
+    </div>
+
+    <div class="spacer">
+
+    </div>
+
+    
+  </div>
+
+  
+
+
+</div>
+{% endblock %}

@@ -1,0 +1,258 @@
+{#
+  This is an example home page template. It inherits and extends a layout template
+  that lives in the top-level views/ folder for convenience
+#}
+
+{% extends "layout.html" %}
+
+{% block main %}
+<div class="main-content">
+  
+  <div class="page-header">
+    <div class="hero-banner">
+    {{ apos.area(data.page, 'body', {
+      widgets: {
+        'apostrophe-images': {
+          size: 'full'
+        }
+      }
+    }) }}
+    <div class="page-header-ribbon"></div>
+    <div class="page-header-desc page-wrapper">
+      <h1>{{ apos.singleton(data.page, 'heroHeading', 'apostrophe-rich-text', {
+        toolbar: [ 'Styles', 'Bold', 'Italic' ],
+        styles: [
+          { name: 'Hero Title', element: 'h1' }
+        ]
+        }) }}
+      </h1>
+
+      <p>{{ apos.singleton(data.page, 'heroParagraph', 'apostrophe-rich-text', {
+            toolbar: [ 'Bold', 'Italic' ]
+          }) }}
+      </p>
+
+      <a href="#ourServices" class="cta-btn">
+        More Info
+      </a>
+    </div>
+  </div>
+
+    <div class="page-section page-grey-section" id="ourServices">
+      <div class="page-wrapper">
+        <h2>{{ apos.singleton(data.page, 'newHEading', 'apostrophe-rich-text', {
+          toolbar: [ 'Styles', 'Bold', 'Italic' ],
+          styles: [
+            { name: 'Subheading', element: 'h2' }
+          ]
+          }) }}
+        </h2>
+
+        <div class="services-tiles">
+          <div class="tile">
+            <div class="tile-img">
+              {{ apos.area(data.page, 'ourServicesImg1', {
+                widgets: {
+                  'apostrophe-images': {
+                    size: 'full'
+                  }
+                }
+              }) }}
+            </div>
+            <div class="tile-txt">
+              <h3>
+                {{ apos.singleton(data.page, 'ourServicesTxtH31', 'apostrophe-rich-text', {
+                  toolbar: [ 'Styles', 'Bold', 'Italic' ],
+                  styles: [
+                    { name: 'Tile 1 services', element: 'h3' }
+                  ]
+                  }) }}
+              </h3>
+              <p>{{ apos.singleton(data.page, 'ourServicesTxtP1', 'apostrophe-rich-text', {
+                toolbar: [ 'Bold', 'Italic' ]
+              }) }}
+              </p>
+              <a href="">Learn More</a>
+            </div>
+          </div>
+
+          <div class="tile">
+            <div class="tile-img">
+              {{ apos.area(data.page, 'ourServicesImg2', {
+                widgets: {
+                  'apostrophe-images': {
+                    size: 'full'
+                  }
+                }
+              }) }}
+            </div>
+            <div class="tile-txt">
+              <h3>
+                {{ apos.singleton(data.page, 'ourServicesTxtH32', 'apostrophe-rich-text', {
+                  toolbar: [ 'Styles', 'Bold', 'Italic' ],
+                  styles: [
+                    { name: 'Tile 1 services', element: 'h3' }
+                  ]
+                  }) }}
+              </h3>
+              <p>{{ apos.singleton(data.page, 'ourServicesTxtP2', 'apostrophe-rich-text', {
+                toolbar: [ 'Bold', 'Italic' ]
+              }) }}
+              </p>
+              <a href="">Learn More</a>
+            </div>
+          </div>
+
+          <div class="tile">
+            <div class="tile-img">
+              {{ apos.area(data.page, 'ourServicesImg3', {
+                widgets: {
+                  'apostrophe-images': {
+                    size: 'full'
+                  }
+                }
+              }) }}
+            </div>
+            <div class="tile-txt">
+              <h3>
+                {{ apos.singleton(data.page, 'ourServicesTxtH33', 'apostrophe-rich-text', {
+                  toolbar: [ 'Styles', 'Bold', 'Italic' ],
+                  styles: [
+                    { name: 'Tile 1 services', element: 'h3' }
+                  ]
+                  }) }}
+              </h3>
+              <p>{{ apos.singleton(data.page, 'ourServicesTxtP3', 'apostrophe-rich-text', {
+                toolbar: [ 'Bold', 'Italic' ]
+              }) }}
+              </p>
+              <a href="">Learn More</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+    <div class="page-section" id="aerialPhotographyHome">
+      <div class="page-wrapper page-split-half">
+        <div class="split-left-side">
+          {{ apos.area(data.page, 'section2Image', {
+            widgets: {
+              'apostrophe-images': {
+                size: 'full'
+              }
+            }
+          }) }}
+        </div>
+        <div class="split-right-side">
+          <h2>{{ apos.singleton(data.page, 'newHEadingSection2', 'apostrophe-rich-text', {
+            toolbar: [ 'Styles', 'Bold', 'Italic' ],
+            styles: [
+              { name: 'Subheading', element: 'h2' }
+            ]
+            }) }}
+          </h2>
+          <p>{{ apos.singleton(data.page, 'newParaSection2', 'apostrophe-rich-text', {
+            toolbar: [ 'Bold', 'Italic' ]
+          }) }}
+          </p>
+          <a href="">Learn More</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="page-section page-grey-section" id="ourTeam">
+      <div class="page-wrapper">
+        <h2>{{ apos.singleton(data.page, 'meetTheTeam', 'apostrophe-rich-text', {
+          toolbar: [ 'Styles', 'Bold', 'Italic' ],
+          styles: [
+            { name: 'Subheading', element: 'h2' }
+          ]
+          }) }}
+        </h2>
+
+        
+        <div class="our-team-members">
+          <div class="home-team-member">
+            <div class="team-circle">
+              {{ apos.area(data.page, 'teamMember1Img', {
+                widgets: {
+                  'apostrophe-images': {
+                    size: 'full'
+                  }
+                }
+              }) }}
+            </div>
+            <div class="team-text">
+              <h2>{{ apos.singleton(data.page, 'ourTeamText1H1', 'apostrophe-rich-text', {
+                toolbar: [ 'Styles', 'Bold', 'Italic' ],
+                styles: [
+                  { name: 'Team member heading', element: 'h2' }
+                ]
+                }) }}
+              </h2>
+              <div class="team-member-sub">{{ apos.singleton(data.page, 'ourTeamText1SH1', 'apostrophe-rich-text', {
+                toolbar: [ 'Bold', 'Italic' ],
+                styles: [
+                  { name: 'Team member subheading', element: 'p' }
+                ]
+              }) }}
+            </div>
+            <div class="team-member-para">
+              <p>{{ apos.singleton(data.page, 'ourTeamText1P1', 'apostrophe-rich-text', {
+                toolbar: [ 'Bold', 'Italic' ]
+              }) }}
+              </p>
+            </div>
+            </div>
+          </div>
+
+          <div class="home-team-member">
+            <div class="team-circle">
+              {{ apos.area(data.page, 'teamMember2Img', {
+                widgets: {
+                  'apostrophe-images': {
+                    size: 'full'
+                  }
+                }
+              }) }}
+            </div>
+            <div class="team-text">
+              <h2>{{ apos.singleton(data.page, 'ourTeamText2H1', 'apostrophe-rich-text', {
+                toolbar: [ 'Styles', 'Bold', 'Italic' ],
+                styles: [
+                  { name: 'Team member heading', element: 'h2' }
+                ]
+                }) }}
+              </h2>
+              <div class="team-member-sub">{{ apos.singleton(data.page, 'ourTeamText2SH1', 'apostrophe-rich-text', {
+                toolbar: [ 'Bold', 'Italic' ],
+                styles: [
+                  { name: 'Team member subheading', element: 'p' }
+                ]
+              }) }}
+            </div>
+            <div class="team-member-para">
+              <p>{{ apos.singleton(data.page, 'ourTeamText2P1', 'apostrophe-rich-text', {
+                toolbar: [ 'Bold', 'Italic' ]
+              }) }}
+              </p>
+            </div>
+            </div>
+          </div>
+        </div>
+
+          
+
+          
+        </div>
+      </div>
+    </div>
+  </div>
+
+  
+
+
+</div>
+{% endblock %}

@@ -1,0 +1,104 @@
+{# Automatically extends the right outer layout and also handles AJAX siutations #}
+{% extends data.outerLayout %}
+
+{% block title %}
+  {# Create a useful, SEO-friendly title tag based on what we have #}
+  {% if data.piece %}
+    {{ data.piece.title }}
+  {% elseif data.page %}
+    {{ data.page.title }}
+  {% else %}
+    {{ apos.log('Looks like you forgot to override the title block in a template that does not have access to an Apostrophe page or piece.') }}
+  {% endif %}
+{% endblock %}
+
+{% block extraHead %}
+  
+{% endblock %}
+
+{% block beforeMain %}
+<nav class="nav">
+  <input type="checkbox" id="nav-check">
+  <div class="nav-header">
+    <div class="nav-title">
+      <a class="nav-logo" href="{{ data.home._url }}"></a>
+    </div>
+  </div>
+  <div class="nav-btn">
+    <label for="nav-check">
+      <span></span>
+      <span></span>
+      <span></span>
+    </label>
+  </div>
+  
+  <div class="nav-links">
+      {% for tab in data.home._children %}
+          <a href="{{ tab._url }}">{{ tab.title }}</a>
+      {% endfor %}
+  </div>
+</nav>
+
+
+
+
+
+  
+{% endblock %}
+
+{# lib/modules/apostrophe-pages/views/default.html #}
+{% block main %}
+  
+{% endblock %}
+
+{% block afterMain %}
+  
+    <footer>
+      <div class="footer-top page-wrapper">
+        <div class="get-in-touch">
+          <h3>Get In Touch</h3>
+          <p>We would love to work with you to help accelerate leads through professional photography, video and 3D Tours. Please leave us a message and we will be in touch shortly.</p>
+          <span>
+            <i></i>
+            hello@pixsel.co
+          </span>
+          <span>
+            <i></i>
+            07403 137314
+          </span>
+          <span>
+            <i></i>
+            Essex, Hertfordshire, London<br />& the surrounding area
+          </span>
+        </div>
+      </div>
+      
+      <div class="footer-bottom">
+        <div>
+          <div class="container-full">
+            <div class="footer-grid page-wrapper">
+              <div class="logo-tagline">
+                <img src="/images/pixsel-logo-white.png" alt="Pixsel Logo White" />
+                <p>Professional and innovative photography for lettings. We want to make YOU stand out from the crowd. Professional and innovative photography for lettings. We want to make YOU stand out from the crowd.</p>
+              </div>
+              <div class="social-media">
+                <div>
+                  <a><i></i></a>
+                  <a><i></i></a>
+                  <a><i></i></a>
+                </div>
+                <p>&copy; Pixsel 2021</p>
+                <p>Website powered by <a href="https://www.linkedin.com/in/liamchapmandm/" target="_blank">Liam Chapman</a></p>
+              </div>
+            </div>
+            <div class="site-map page-wrapper">
+              {% for tab in data.home._children %}
+              <a href="{{ tab._url }}">{{ tab.title }}</a>
+              {% endfor %}
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+  
+{% endblock %}

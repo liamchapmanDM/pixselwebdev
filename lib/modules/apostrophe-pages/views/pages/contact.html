@@ -1,0 +1,48 @@
+{#
+  This is an example home page template. It inherits and extends a layout template
+  that lives in the top-level views/ folder for convenience
+#}
+
+{% extends "layout.html" %}
+
+{% block main %}
+<div class="main-content">
+  <div class="page-header">
+    <div class="hero-banner not-home">
+    {{ apos.area(data.page, 'body', {
+      widgets: {
+        'apostrophe-images': {
+          size: 'full'
+        }
+      }
+    }) }}
+    <div class="page-header-ribbon"></div>
+    <div class="page-wrapper">
+      <div class="header-content-box">
+        <h1>{{ apos.singleton(data.page, 'heroHeading', 'apostrophe-rich-text', {
+          toolbar: [ 'Styles', 'Bold', 'Italic' ],
+          styles: [
+            { name: 'Hero Title', element: 'h1' }
+          ]
+          }) }}
+        </h1>
+  
+        <div class="content-box-para">{{ apos.singleton(data.page, 'heroParagraph', 'apostrophe-rich-text', {
+              toolbar: [ 'Bold', 'Italic' ]
+            }) }}
+        </div>
+  
+        <a href="#ourServices" class="cta-btn">
+          More Info
+        </a>
+      </div>
+      
+    </div>
+  </div>
+  </div>
+
+  
+
+
+</div>
+{% endblock %}
